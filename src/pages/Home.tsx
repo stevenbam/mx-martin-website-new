@@ -7,7 +7,7 @@ const Home: React.FC = () => {
     <div className="home">
       <MusicMatrixBackground />
       <h2>Welcome to Mx Martin's Official Website</h2>
-      <p>Explore our music and merchandise</p>
+      <p>Join us in our music and journey</p>
     </div>
   );
 };
