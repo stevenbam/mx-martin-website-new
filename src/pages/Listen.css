@@ -1,0 +1,17 @@
+.listen {
+    padding: 2rem;
+    position: relative;
+    min-height: calc(100vh - 200px);
+  }
+
+  .listen h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ff10f0;
+    text-shadow: 0 0 10px rgba(255, 16, 240, 0.8),
+                 0 0 20px rgba(255, 16, 240, 0.5);
+    font-weight: bold;
+    position: relative;
+    z-index: 10;
+  }
+  

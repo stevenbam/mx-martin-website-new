@@ -1,0 +1,22 @@
+.song-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .song-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .song-item h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+  }
+  
+  audio {
+    width: 100%;
+  }
+  

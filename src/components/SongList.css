@@ -1,0 +1,36 @@
+.song-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .song-item {
+    background: rgba(157, 78, 221, 0.1);
+    border: 2px solid #9d4edd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .song-item:hover {
+    border-color: #ff10f0;
+    box-shadow: 0 0 25px rgba(255, 16, 240, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .song-item h3 {
+    color: #ff10f0;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-shadow: 0 0 8px rgba(255, 16, 240, 0.5);
+  }
+
+  .song-item audio {
+    width: 100%;
+    filter: hue-rotate(270deg) saturate(2);
+  }
+  
