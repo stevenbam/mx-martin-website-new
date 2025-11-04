@@ -12,6 +12,12 @@ const Video: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [newTitle, setNewTitle] = useState<string>('');
+  const [isRecording, setIsRecording] = useState<boolean>(false);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [recordedBlob, setRecordedBlob] = useState<Blob | null>(null);
+  const [recordTitle, setRecordTitle] = useState<string>('');
+  const [stream, setStream] = useState<MediaStream | null>(null);
+  const videoPreviewRef = React.useRef<HTMLVideoElement>(null);
 
   const ADMIN_PASSWORD = 'mxmartin2024';
 
@@ -92,6 +98,89 @@ const Video: React.FC = () => {
     }
   };
 
+  const startVideoRecording = async (): Promise<void> => {
+    try {
+      const mediaStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true
+      });
+
+      setStream(mediaStream);
+
+      // Show preview
+      if (videoPreviewRef.current) {
+        videoPreviewRef.current.srcObject = mediaStream;
+      }
+
+      const recorder = new MediaRecorder(mediaStream);
+      const chunks: Blob[] = [];
+
+      recorder.ondataavailable = (e) => {
+        if (e.data.size > 0) {
+          chunks.push(e.data);
+        }
+      };
+
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        setRecordedBlob(blob);
+        mediaStream.getTracks().forEach(track => track.stop());
+        if (videoPreviewRef.current) {
+          videoPreviewRef.current.srcObject = null;
+        }
+      };
+
+      recorder.start();
+      setMediaRecorder(recorder);
+      setIsRecording(true);
+    } catch (error) {
+      console.error('Error starting recording:', error);
+      alert('Could not access camera/microphone. Please grant permission.');
+    }
+  };
+
+  const stopVideoRecording = (): void => {
+    if (mediaRecorder && isRecording) {
+      mediaRecorder.stop();
+      setIsRecording(false);
+    }
+  };
+
+  const uploadRecordedVideo = async (): Promise<void> => {
+    if (!recordedBlob || !recordTitle) {
+      alert('Please provide a title for the recording');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = async (event: ProgressEvent<FileReader>) => {
+      try {
+        const response = await fetch(`${API_URL}/videos`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            title: recordTitle,
+            url: event.target?.result as string,
+            isEmbed: false
+          })
+        });
+
+        if (response.ok) {
+          alert('Recording uploaded successfully!');
+          setRecordTitle('');
+          setRecordedBlob(null);
+          await fetchVideos();
+        } else {
+          alert('Failed to upload recording');
+        }
+      } catch (error) {
+        console.error('Error uploading recording:', error);
+        alert('Error uploading recording');
+      }
+    };
+    reader.readAsDataURL(recordedBlob);
+  };
+
   return (
     <div className="video-page">
       <MusicMatrixBackground />
@@ -132,6 +221,54 @@ const Video: React.FC = () => {
             onChange={handleVideoUpload}
             className="file-input"
           />
+
+          <h3 style={{ marginTop: '20px' }}>Or Record Video</h3>
+          <div className="record-section">
+            {!isRecording && !recordedBlob && (
+              <button onClick={startVideoRecording} className="record-btn">
+                🎥 Start Recording
+              </button>
+            )}
+
+            {isRecording && (
+              <>
+                <video
+                  ref={videoPreviewRef}
+                  autoPlay
+                  muted
+                  style={{ width: '100%', maxWidth: '500px', marginBottom: '10px' }}
+                />
+                <button onClick={stopVideoRecording} className="stop-btn">
+                  ⏹️ Stop Recording
+                </button>
+              </>
+            )}
+
+            {recordedBlob && (
+              <div className="recorded-section">
+                <p>✅ Recording complete!</p>
+                <video
+                  src={URL.createObjectURL(recordedBlob)}
+                  controls
+                  style={{ width: '100%', maxWidth: '500px', marginBottom: '10px' }}
+                />
+                <input
+                  type="text"
+                  placeholder="Video Title"
+                  value={recordTitle}
+                  onChange={(e) => setRecordTitle(e.target.value)}
+                  style={{ display: 'block', marginBottom: '10px', padding: '8px' }}
+                />
+                <button onClick={uploadRecordedVideo} style={{ marginRight: '10px' }}>
+                  Upload Recording
+                </button>
+                <button onClick={() => setRecordedBlob(null)}>
+                  Discard
+                </button>
+              </div>
+            )}
+          </div>
+
           <button onClick={() => setIsAdmin(false)} className="close-admin-btn">
             Close Admin
           </button>

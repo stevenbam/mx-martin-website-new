@@ -113,14 +113,22 @@
 }
 
 .file-input::file-selector-button {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   background: linear-gradient(135deg, #9d4edd, #ff10f0);
   color: white;
-  border: none;
+  border: 2px solid #ff10f0;
   border-radius: 8px;
   cursor: pointer;
   margin-right: 1rem;
   font-weight: bold;
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+  transition: all 0.3s ease;
+}
+
+.file-input::file-selector-button:hover {
+  background: linear-gradient(135deg, #ff10f0, #9d4edd);
+  box-shadow: 0 0 25px rgba(255, 16, 240, 0.8);
+  transform: scale(1.05);
 }
 
 .close-admin-btn {
@@ -258,6 +266,135 @@
 .close-button:hover {
   background: #9d4edd;
   transform: scale(1.1);
+}
+
+/* Recording Section Styles */
+.record-section {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.record-btn {
+  background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+  color: white;
+  border: 2px solid #c77dff;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(199, 125, 255, 0.9);
+  }
+}
+
+.record-btn:hover {
+  background: linear-gradient(135deg, #c77dff 0%, #ff10f0 100%);
+  box-shadow: 0 0 35px rgba(255, 16, 240, 1);
+  transform: scale(1.05);
+}
+
+.stop-btn {
+  background: linear-gradient(135deg, #ff10f0 0%, #e0aaff 100%);
+  color: white;
+  border: 2px solid #ff10f0;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(255, 16, 240, 0.8);
+  transition: all 0.3s ease;
+  animation: recording 1s ease-in-out infinite;
+}
+
+@keyframes recording {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 16, 240, 0.8);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 16, 240, 1);
+    transform: scale(1.02);
+  }
+}
+
+.stop-btn:hover {
+  background: linear-gradient(135deg, #e0aaff 0%, #ff10f0 100%);
+  transform: scale(1.05);
+}
+
+.recorded-section {
+  background: rgba(157, 78, 221, 0.15);
+  border: 2px solid #c77dff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.recorded-section p {
+  color: #c77dff;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(199, 125, 255, 0.5);
+}
+
+.recorded-section video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 2px solid #9d4edd;
+}
+
+.recorded-section input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #9d4edd;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.recorded-section input:focus {
+  outline: none;
+  border-color: #ff10f0;
+  box-shadow: 0 0 10px rgba(255, 16, 240, 0.5);
+}
+
+.recorded-section button {
+  background: linear-gradient(135deg, #9d4edd 0%, #ff10f0 100%);
+  color: white;
+  border: 2px solid #ff10f0;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+  transition: all 0.3s ease;
+}
+
+.recorded-section button:hover {
+  background: linear-gradient(135deg, #ff10f0 0%, #9d4edd 100%);
+  box-shadow: 0 0 25px rgba(255, 16, 240, 0.8);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {

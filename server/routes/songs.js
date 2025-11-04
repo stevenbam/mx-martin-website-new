@@ -1,6 +1,37 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+
+// Configure multer for file upload
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadDir = path.join(__dirname, '../../uploads/songs');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: (req, file, cb) => {
+    // Keep original filename
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    // Accept audio files only
+    if (file.mimetype.startsWith('audio/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only audio files are allowed!'), false);
+    }
+  },
+  limits: { fileSize: 50 * 1024 * 1024 } // 50MB limit
+});
 
 // GET all songs
 router.get('/', async (req, res) => {
@@ -57,9 +88,52 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// POST upload song file
+router.post('/upload', upload.single('song'), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'No file uploaded' });
+    }
+
+    const { title } = req.body;
+    if (!title) {
+      return res.status(400).json({ error: 'Title is required' });
+    }
+
+    // Store the file path relative to uploads directory
+    const file_path = `/uploads/songs/${req.file.filename}`;
+
+    const [result] = await db.query(
+      'INSERT INTO songs (title, file_path) VALUES (?, ?)',
+      [title, file_path]
+    );
+
+    res.status(201).json({
+      id: result.insertId,
+      title,
+      file_path,
+      message: 'Song uploaded successfully'
+    });
+  } catch (error) {
+    console.error('Error uploading song:', error);
+    res.status(500).json({ error: 'Failed to upload song' });
+  }
+});
+
 // DELETE song
 router.delete('/:id', async (req, res) => {
   try {
+    // Get song info to delete file
+    const [rows] = await db.query('SELECT file_path FROM songs WHERE id = ?', [req.params.id]);
+
+    if (rows.length > 0) {
+      const filePath = path.join(__dirname, '../../', rows[0].file_path);
+      // Delete file if it exists
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+      }
+    }
+
     await db.query('DELETE FROM songs WHERE id = ?', [req.params.id]);
     res.json({ message: 'Song deleted successfully' });
   } catch (error) {
