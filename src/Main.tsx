@@ -7,6 +7,7 @@ import StorePage from './pages/StorePage';
 import Video from './pages/Video';
 import Photos from './pages/Photos';
 import Lyrics from './pages/Lyrics';
+import Apps from './pages/Apps';
 import './transitions.css';
 
 const Main: React.FC = () => {
@@ -29,6 +30,7 @@ const Main: React.FC = () => {
             <Route path="/photos" element={<Photos />} />
             <Route path="/lyrics" element={<Lyrics />} />
             <Route path="/store" element={<StorePage />} />
+            <Route path="/apps" element={<Apps />} />
           </Routes>
         </div>
       </CSSTransition>
