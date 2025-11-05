@@ -17,7 +17,9 @@ const Video: React.FC = () => {
   const [recordedBlob, setRecordedBlob] = useState<Blob | null>(null);
   const [recordTitle, setRecordTitle] = useState<string>('');
   const [stream, setStream] = useState<MediaStream | null>(null);
+  const [previewStream, setPreviewStream] = useState<MediaStream | null>(null);
   const videoPreviewRef = React.useRef<HTMLVideoElement>(null);
+  const cameraPreviewRef = React.useRef<HTMLVideoElement>(null);
 
   const ADMIN_PASSWORD = 'mxmartin2024';
 
@@ -25,6 +27,46 @@ const Video: React.FC = () => {
   useEffect(() => {
     fetchVideos();
   }, []);
+
+  // Start camera preview when admin mode is active
+  useEffect(() => {
+    if (isAdmin && !isRecording && !recordedBlob) {
+      startCameraPreview();
+    } else {
+      stopCameraPreview();
+    }
+
+    return () => {
+      stopCameraPreview();
+    };
+  }, [isAdmin, isRecording, recordedBlob]);
+
+  const startCameraPreview = async (): Promise<void> => {
+    try {
+      const mediaStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: false
+      });
+
+      setPreviewStream(mediaStream);
+
+      if (cameraPreviewRef.current) {
+        cameraPreviewRef.current.srcObject = mediaStream;
+      }
+    } catch (error) {
+      console.error('Error accessing camera for preview:', error);
+    }
+  };
+
+  const stopCameraPreview = (): void => {
+    if (previewStream) {
+      previewStream.getTracks().forEach(track => track.stop());
+      setPreviewStream(null);
+      if (cameraPreviewRef.current) {
+        cameraPreviewRef.current.srcObject = null;
+      }
+    }
+  };
 
   const fetchVideos = async (): Promise<void> => {
     try {
@@ -99,6 +141,9 @@ const Video: React.FC = () => {
   };
 
   const startVideoRecording = async (): Promise<void> => {
+    // Stop the preview stream first
+    stopCameraPreview();
+
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
         video: true,
@@ -225,9 +270,26 @@ const Video: React.FC = () => {
           <h3 style={{ marginTop: '20px' }}>Or Record Video</h3>
           <div className="record-section">
             {!isRecording && !recordedBlob && (
-              <button onClick={startVideoRecording} className="record-btn">
-                🎥 Start Recording
-              </button>
+              <>
+                <div style={{ marginBottom: '15px' }}>
+                  <p style={{ color: '#ff6600', fontWeight: 'bold', marginBottom: '10px' }}>📹 Camera Preview</p>
+                  <video
+                    ref={cameraPreviewRef}
+                    autoPlay
+                    muted
+                    style={{
+                      width: '100%',
+                      maxWidth: '500px',
+                      borderRadius: '8px',
+                      border: '2px solid #228b22',
+                      marginBottom: '10px'
+                    }}
+                  />
+                </div>
+                <button onClick={startVideoRecording} className="record-btn">
+                  🎥 Start Recording
+                </button>
+              </>
             )}
 
             {isRecording && (

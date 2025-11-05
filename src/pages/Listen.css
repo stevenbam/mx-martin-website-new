@@ -5,13 +5,21 @@
   }
 
   .listen h2 {
-    font-size: 2.5rem;
+    font-family: 'Metal Mania', cursive;
+    font-size: 3rem;
     margin-bottom: 2rem;
-    color: #ff10f0;
-    text-shadow: 0 0 10px rgba(255, 16, 240, 0.8),
-                 0 0 20px rgba(255, 16, 240, 0.5);
+    color: #cc0000;
+    text-shadow:
+      0 0 8px rgba(200, 0, 0, 0.5),
+      0 0 15px rgba(255, 50, 0, 0.3),
+      2px 2px 0px #000,
+      -2px -2px 0px #000,
+      2px -2px 0px #000,
+      -2px 2px 0px #000;
     font-weight: bold;
     position: relative;
     z-index: 10;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
   

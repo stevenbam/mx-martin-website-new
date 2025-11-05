@@ -5,14 +5,22 @@
 }
 
 .video-page h2 {
-  font-size: 2.5rem;
+  font-family: 'Metal Mania', cursive;
+  font-size: 3rem;
   margin-bottom: 2rem;
-  color: #ff10f0;
-  text-shadow: 0 0 10px rgba(255, 16, 240, 0.8),
-               0 0 20px rgba(255, 16, 240, 0.5);
+  color: #cc0000;
+  text-shadow:
+    0 0 8px rgba(200, 0, 0, 0.5),
+    0 0 15px rgba(255, 50, 0, 0.3),
+    2px 2px 0px #000,
+    -2px -2px 0px #000,
+    2px -2px 0px #000,
+    -2px 2px 0px #000;
   font-weight: bold;
   position: relative;
   z-index: 10;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* Admin Controls */
@@ -21,7 +29,7 @@
   top: 2rem;
   right: 2rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #9d4edd, #ff10f0);
+  background: linear-gradient(135deg, #ff6600, #ff0000);
   color: white;
   border: none;
   border-radius: 8px;
@@ -33,7 +41,7 @@
 
 .admin-toggle:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .admin-login {
@@ -42,26 +50,26 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
-  background: rgba(157, 78, 221, 0.2);
+  background: rgba(255, 100, 0, 0.2);
   padding: 1.5rem;
   border-radius: 8px;
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
   justify-content: center;
 }
 
 .admin-login input {
   padding: 0.75rem;
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.5);
-  color: #ff10f0;
+  color: #ff0000;
   font-size: 1rem;
   min-width: 250px;
 }
 
 .admin-login button {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #ff10f0, #9d4edd);
+  background: linear-gradient(135deg, #ff0000, #ff6600);
   color: white;
   border: none;
   border-radius: 8px;
@@ -72,27 +80,27 @@
 .upload-panel {
   position: relative;
   z-index: 100;
-  background: rgba(157, 78, 221, 0.2);
+  background: rgba(255, 100, 0, 0.2);
   padding: 2rem;
   border-radius: 12px;
-  border: 2px solid #ff10f0;
+  border: 2px solid #ff0000;
   margin-bottom: 2rem;
-  box-shadow: 0 0 20px rgba(255, 16, 240, 0.5);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .upload-panel h3 {
-  color: #ff10f0;
+  color: #ff0000;
   margin-bottom: 1rem;
-  text-shadow: 0 0 8px rgba(255, 16, 240, 0.5);
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
 
 .caption-input {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.5);
   color: #ffffff;
@@ -103,10 +111,10 @@
 .file-input {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.5);
-  color: #ff10f0;
+  color: #ff0000;
   font-size: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
@@ -114,27 +122,27 @@
 
 .file-input::file-selector-button {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #9d4edd, #ff10f0);
+  background: linear-gradient(135deg, #ff6600, #ff0000);
   color: white;
-  border: 2px solid #ff10f0;
+  border: 2px solid #ff0000;
   border-radius: 8px;
   cursor: pointer;
   margin-right: 1rem;
   font-weight: bold;
-  box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+  box-shadow: 0 0 15px rgba(255, 100, 0, 0.5);
   transition: all 0.3s ease;
 }
 
 .file-input::file-selector-button:hover {
-  background: linear-gradient(135deg, #ff10f0, #9d4edd);
-  box-shadow: 0 0 25px rgba(255, 16, 240, 0.8);
+  background: linear-gradient(135deg, #ff0000, #ff6600);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
   transform: scale(1.05);
 }
 
 .close-admin-btn {
   width: 100%;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #228b22, #9d4edd);
+  background: linear-gradient(135deg, #228b22, #ff6600);
   color: white;
   border: none;
   border-radius: 8px;
@@ -157,25 +165,25 @@
 }
 
 .video-container {
-  background: rgba(157, 78, 221, 0.1);
-  border: 2px solid #9d4edd;
+  background: rgba(255, 100, 0, 0.1);
+  border: 2px solid #ff6600;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+  box-shadow: 0 0 15px rgba(255, 100, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .video-container:hover {
-  border-color: #ff10f0;
-  box-shadow: 0 0 25px rgba(255, 16, 240, 0.5);
+  border-color: #ff0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
   transform: translateY(-3px);
 }
 
 .video-container h3 {
-  color: #ff10f0;
+  color: #ff0000;
   margin-bottom: 1rem;
   font-size: 1.3rem;
-  text-shadow: 0 0 8px rgba(255, 16, 240, 0.5);
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
 
 .video-container iframe,
@@ -222,19 +230,19 @@
   position: relative;
   max-width: 90%;
   max-height: 90%;
-  background: rgba(157, 78, 221, 0.2);
-  border: 3px solid #ff10f0;
+  background: rgba(255, 100, 0, 0.2);
+  border: 3px solid #ff0000;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 0 40px rgba(255, 16, 240, 0.8);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
 }
 
 .video-lightbox-content h3 {
   text-align: center;
-  color: #ff10f0;
+  color: #ff0000;
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  text-shadow: 0 0 10px rgba(255, 16, 240, 0.8);
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
 }
 
 .video-lightbox-content video {
@@ -248,7 +256,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background: #ff10f0;
+  background: #ff0000;
   color: white;
   border: none;
   font-size: 2rem;
@@ -260,11 +268,11 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .close-button:hover {
-  background: #9d4edd;
+  background: #ff6600;
   transform: scale(1.1);
 }
 
@@ -278,67 +286,67 @@
 }
 
 .record-btn {
-  background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+  background: linear-gradient(135deg, #ff6600 0%, #ff9900 100%);
   color: white;
-  border: 2px solid #c77dff;
+  border: 2px solid #ff9900;
   padding: 15px 30px;
   border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1.1rem;
-  box-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+  box-shadow: 0 0 20px rgba(255, 100, 0, 0.6);
   transition: all 0.3s ease;
   animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.6);
   }
   50% {
-    box-shadow: 0 0 30px rgba(199, 125, 255, 0.9);
+    box-shadow: 0 0 30px rgba(255, 150, 0, 0.9);
   }
 }
 
 .record-btn:hover {
-  background: linear-gradient(135deg, #c77dff 0%, #ff10f0 100%);
-  box-shadow: 0 0 35px rgba(255, 16, 240, 1);
+  background: linear-gradient(135deg, #ff9900 0%, #ff0000 100%);
+  box-shadow: 0 0 35px rgba(255, 0, 0, 1);
   transform: scale(1.05);
 }
 
 .stop-btn {
-  background: linear-gradient(135deg, #ff10f0 0%, #e0aaff 100%);
+  background: linear-gradient(135deg, #ff0000 0%, #e0aaff 100%);
   color: white;
-  border: 2px solid #ff10f0;
+  border: 2px solid #ff0000;
   padding: 15px 30px;
   border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1.1rem;
-  box-shadow: 0 0 20px rgba(255, 16, 240, 0.8);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
   transition: all 0.3s ease;
   animation: recording 1s ease-in-out infinite;
 }
 
 @keyframes recording {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 16, 240, 0.8);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 35px rgba(255, 16, 240, 1);
+    box-shadow: 0 0 35px rgba(255, 0, 0, 1);
     transform: scale(1.02);
   }
 }
 
 .stop-btn:hover {
-  background: linear-gradient(135deg, #e0aaff 0%, #ff10f0 100%);
+  background: linear-gradient(135deg, #e0aaff 0%, #ff0000 100%);
   transform: scale(1.05);
 }
 
 .recorded-section {
-  background: rgba(157, 78, 221, 0.15);
-  border: 2px solid #c77dff;
+  background: rgba(255, 100, 0, 0.15);
+  border: 2px solid #ff9900;
   border-radius: 12px;
   padding: 20px;
   width: 100%;
@@ -347,24 +355,24 @@
 }
 
 .recorded-section p {
-  color: #c77dff;
+  color: #ff9900;
   font-weight: bold;
   margin-bottom: 15px;
   text-align: center;
-  text-shadow: 0 0 10px rgba(199, 125, 255, 0.5);
+  text-shadow: 0 0 10px rgba(255, 150, 0, 0.5);
 }
 
 .recorded-section video {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 15px;
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
 }
 
 .recorded-section input {
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
   color: white;
   padding: 12px;
   border-radius: 8px;
@@ -374,26 +382,26 @@
 
 .recorded-section input:focus {
   outline: none;
-  border-color: #ff10f0;
-  box-shadow: 0 0 10px rgba(255, 16, 240, 0.5);
+  border-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 .recorded-section button {
-  background: linear-gradient(135deg, #9d4edd 0%, #ff10f0 100%);
+  background: linear-gradient(135deg, #ff6600 0%, #ff0000 100%);
   color: white;
-  border: 2px solid #ff10f0;
+  border: 2px solid #ff0000;
   padding: 12px 24px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
-  box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+  box-shadow: 0 0 15px rgba(255, 100, 0, 0.5);
   transition: all 0.3s ease;
 }
 
 .recorded-section button:hover {
-  background: linear-gradient(135deg, #ff10f0 0%, #9d4edd 100%);
-  box-shadow: 0 0 25px rgba(255, 16, 240, 0.8);
+  background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
   transform: translateY(-2px);
 }
 

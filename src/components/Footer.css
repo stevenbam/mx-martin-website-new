@@ -1,11 +1,14 @@
 .footer {
-    background-color: #000000;
-    color: #9d4edd;
+    background: linear-gradient(0deg, #0a0a0a 0%, #1a0000 100%);
+    color: #ff6600;
     text-align: center;
     padding: 1rem;
     width: 100%;
-    border-top: 2px solid #9d4edd;
+    border-top: 3px solid #ff0000;
+    box-shadow: 0 -4px 20px rgba(255, 0, 0, 0.3);
     position: relative;
     z-index: 100;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 100, 0, 0.5);
   }
   

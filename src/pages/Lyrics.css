@@ -8,14 +8,22 @@
 }
 
 .lyrics-page h2 {
-  font-size: 2.5rem;
+  font-family: 'Metal Mania', cursive;
+  font-size: 3rem;
   margin-bottom: 2rem;
-  color: #ff10f0;
-  text-shadow: 0 0 10px rgba(255, 16, 240, 0.8),
-               0 0 20px rgba(255, 16, 240, 0.5);
+  color: #cc0000;
+  text-shadow:
+    0 0 8px rgba(200, 0, 0, 0.5),
+    0 0 15px rgba(255, 50, 0, 0.3),
+    2px 2px 0px #000,
+    -2px -2px 0px #000,
+    2px -2px 0px #000,
+    -2px 2px 0px #000;
   font-weight: bold;
   position: relative;
   z-index: 10;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* Admin Controls */
@@ -24,7 +32,7 @@
   top: 2rem;
   right: 2rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #9d4edd, #ff10f0);
+  background: linear-gradient(135deg, #ff6600, #ff0000);
   color: white;
   border: none;
   border-radius: 8px;
@@ -36,7 +44,7 @@
 
 .admin-toggle:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .admin-login {
@@ -45,25 +53,25 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
-  background: rgba(157, 78, 221, 0.2);
+  background: rgba(255, 100, 0, 0.2);
   padding: 1.5rem;
   border-radius: 8px;
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
 }
 
 .admin-login input {
   padding: 0.75rem;
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.5);
-  color: #ff10f0;
+  color: #ff0000;
   font-size: 1rem;
   min-width: 250px;
 }
 
 .admin-login button {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #ff10f0, #9d4edd);
+  background: linear-gradient(135deg, #ff0000, #ff6600);
   color: white;
   border: none;
   border-radius: 8px;
@@ -74,20 +82,20 @@
 .admin-panel {
   position: relative;
   z-index: 100;
-  background: rgba(157, 78, 221, 0.2);
+  background: rgba(255, 100, 0, 0.2);
   padding: 2rem;
   border-radius: 12px;
-  border: 2px solid #ff10f0;
+  border: 2px solid #ff0000;
   margin-bottom: 2rem;
-  box-shadow: 0 0 20px rgba(255, 16, 240, 0.5);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
   max-width: 600px;
   width: 100%;
 }
 
 .admin-panel h3 {
-  color: #ff10f0;
+  color: #ff0000;
   margin-bottom: 1rem;
-  text-shadow: 0 0 8px rgba(255, 16, 240, 0.5);
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
 
 .admin-panel form {
@@ -99,7 +107,7 @@
 .admin-panel input,
 .admin-panel textarea {
   padding: 0.75rem;
-  border: 2px solid #9d4edd;
+  border: 2px solid #ff6600;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.5);
   color: #ffffff;
@@ -114,7 +122,7 @@
 
 .admin-panel button {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #ff10f0, #9d4edd);
+  background: linear-gradient(135deg, #ff0000, #ff6600);
   color: white;
   border: none;
   border-radius: 8px;
@@ -125,11 +133,11 @@
 
 .admin-panel button:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .admin-panel button[type="button"] {
-  background: linear-gradient(135deg, #228b22, #9d4edd);
+  background: linear-gradient(135deg, #228b22, #ff6600);
 }
 
 /* Notebook Design */
@@ -140,7 +148,7 @@
   background: #f9f7f0;
   border-radius: 8px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
-              inset 0 0 20px rgba(157, 78, 221, 0.2);
+              inset 0 0 20px rgba(255, 100, 0, 0.2);
   padding: 3rem;
   z-index: 10;
   margin: 2rem 0;
@@ -152,7 +160,7 @@
   top: 0;
   bottom: 0;
   width: 40px;
-  background: linear-gradient(to right, #9d4edd, #7b2cbf);
+  background: linear-gradient(to right, #ff6600, #7b2cbf);
   border-radius: 8px 0 0 8px;
   box-shadow: inset -3px 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -165,8 +173,8 @@
   width: 3px;
   background: repeating-linear-gradient(
     to bottom,
-    #ff10f0,
-    #ff10f0 10px,
+    #ff0000,
+    #ff0000 10px,
     transparent 10px,
     transparent 15px
   );
@@ -177,8 +185,8 @@
   background: linear-gradient(to right,
     transparent 0,
     transparent 30px,
-    #ff10f0 30px,
-    #ff10f0 31px,
+    #ff0000 30px,
+    #ff0000 31px,
     transparent 31px
   );
 }
@@ -187,8 +195,8 @@
   background-image: repeating-linear-gradient(
     transparent,
     transparent 31px,
-    #9d4edd50 31px,
-    #9d4edd50 32px
+    #ff660050 31px,
+    #ff660050 32px
   );
   min-height: 500px;
   padding: 2rem 2rem 2rem 3rem;
@@ -196,9 +204,9 @@
 
 .page-lines h3 {
   font-size: 2rem;
-  color: #ff10f0;
+  color: #ff0000;
   margin-bottom: 2rem;
-  text-shadow: 0 0 8px rgba(255, 16, 240, 0.5);
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
   font-family: 'Courier New', monospace;
 }
 
@@ -217,13 +225,13 @@
   gap: 1rem;
   margin-top: 2rem;
   padding-top: 1rem;
-  border-top: 2px dashed #9d4edd50;
+  border-top: 2px dashed #ff660050;
 }
 
 .edit-song-btn {
   flex: 1;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #9d4edd, #ff10f0);
+  background: linear-gradient(135deg, #ff6600, #ff0000);
   color: white;
   border: none;
   border-radius: 8px;
@@ -235,7 +243,7 @@
 
 .edit-song-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .delete-song-btn {
@@ -267,7 +275,7 @@
 
 .page-btn {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #9d4edd, #ff10f0);
+  background: linear-gradient(135deg, #ff6600, #ff0000);
   color: white;
   border: none;
   border-radius: 8px;
@@ -278,7 +286,7 @@
 
 .page-btn:hover:not(:disabled) {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .page-btn:disabled {
@@ -287,10 +295,10 @@
 }
 
 .page-number {
-  color: #9d4edd;
+  color: #ff6600;
   font-weight: bold;
   font-size: 1.1rem;
-  text-shadow: 0 0 5px rgba(157, 78, 221, 0.5);
+  text-shadow: 0 0 5px rgba(255, 100, 0, 0.5);
 }
 
 /* Responsive Design */

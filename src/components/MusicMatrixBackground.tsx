@@ -20,7 +20,7 @@ const MusicMatrixBackground: React.FC = () => {
     // Initialize drops at random positions for instant animation effect
     const drops: number[] = Array(columns).fill(0).map(() => Math.floor(Math.random() * (canvas.height / fontSize)));
 
-    const colors: string[] = ['#9d4edd', '#b185db', '#7b2cbf', '#228b22', '#2fa52f', '#1a6b1a', '#ff10f0'];
+    const colors: string[] = ['#ff0000', '#ff3300', '#ff6600', '#ff4400', '#cc0000', '#ff9900', '#ffff00', '#9d4edd', '#7b2cbf', '#228b22', '#2fa52f', '#00ff88', '#10b981'];
 
     const draw = (): void => {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';

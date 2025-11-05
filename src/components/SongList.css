@@ -8,25 +8,25 @@
   }
 
   .song-item {
-    background: rgba(157, 78, 221, 0.1);
-    border: 2px solid #9d4edd;
+    background: rgba(255, 100, 0, 0.1);
+    border: 2px solid #ff6600;
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+    box-shadow: 0 0 15px rgba(255, 100, 0, 0.3);
     transition: all 0.3s ease;
   }
 
   .song-item:hover {
-    border-color: #ff10f0;
-    box-shadow: 0 0 25px rgba(255, 16, 240, 0.5);
+    border-color: #ff0000;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
     transform: translateY(-2px);
   }
 
   .song-item h3 {
-    color: #ff10f0;
+    color: #ff0000;
     margin-bottom: 1rem;
     font-size: 1.3rem;
-    text-shadow: 0 0 8px rgba(255, 16, 240, 0.5);
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
   }
 
   .song-item audio {
@@ -36,26 +36,26 @@
 
   /* Admin Section Styles */
   .admin-btn, .login-form button {
-    background: linear-gradient(135deg, #9d4edd 0%, #ff10f0 100%);
+    background: linear-gradient(135deg, #ff6600 0%, #ff0000 100%);
     color: white;
-    border: 2px solid #ff10f0;
+    border: 2px solid #ff0000;
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+    box-shadow: 0 0 15px rgba(255, 100, 0, 0.5);
     transition: all 0.3s ease;
     margin: 10px 5px;
   }
 
   .admin-btn:hover, .login-form button:hover {
-    background: linear-gradient(135deg, #ff10f0 0%, #9d4edd 100%);
-    box-shadow: 0 0 25px rgba(255, 16, 240, 0.8);
+    background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
     transform: translateY(-2px);
   }
 
   .logout-btn {
-    background: linear-gradient(135deg, #228b22, #9d4edd);
+    background: linear-gradient(135deg, #228b22, #ff6600);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -73,17 +73,17 @@
   }
 
   .admin-section {
-    background: rgba(157, 78, 221, 0.1);
-    border: 2px solid #9d4edd;
+    background: rgba(255, 100, 0, 0.1);
+    border: 2px solid #ff6600;
     border-radius: 12px;
     padding: 2rem;
     margin: 20px 0;
-    box-shadow: 0 0 20px rgba(157, 78, 221, 0.3);
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.3);
   }
 
   .admin-section h3 {
-    color: #ff10f0;
-    text-shadow: 0 0 10px rgba(255, 16, 240, 0.5);
+    color: #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     margin-bottom: 15px;
   }
 
@@ -95,7 +95,7 @@
 
   .login-form input {
     background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #9d4edd;
+    border: 2px solid #ff6600;
     color: white;
     padding: 10px;
     border-radius: 8px;
@@ -104,8 +104,8 @@
 
   .login-form input:focus {
     outline: none;
-    border-color: #ff10f0;
-    box-shadow: 0 0 10px rgba(255, 16, 240, 0.5);
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   }
 
   .upload-form, .record-form {
@@ -117,7 +117,7 @@
 
   .upload-form input[type="text"], .record-form input[type="text"] {
     background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #9d4edd;
+    border: 2px solid #ff6600;
     color: white;
     padding: 12px;
     border-radius: 8px;
@@ -126,13 +126,13 @@
 
   .upload-form input[type="text"]:focus, .record-form input[type="text"]:focus {
     outline: none;
-    border-color: #ff10f0;
-    box-shadow: 0 0 10px rgba(255, 16, 240, 0.5);
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   }
 
   .upload-form input[type="file"] {
-    background: rgba(157, 78, 221, 0.2);
-    border: 2px solid #9d4edd;
+    background: rgba(255, 100, 0, 0.2);
+    border: 2px solid #ff6600;
     color: white;
     padding: 12px;
     border-radius: 8px;
@@ -140,40 +140,40 @@
   }
 
   .upload-form input[type="file"]::file-selector-button {
-    background: linear-gradient(135deg, #9d4edd 0%, #ff10f0 100%);
+    background: linear-gradient(135deg, #ff6600 0%, #ff0000 100%);
     color: white;
-    border: 2px solid #ff10f0;
+    border: 2px solid #ff0000;
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     margin-right: 15px;
-    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+    box-shadow: 0 0 15px rgba(255, 100, 0, 0.5);
     transition: all 0.3s ease;
   }
 
   .upload-form input[type="file"]::file-selector-button:hover {
-    background: linear-gradient(135deg, #ff10f0 0%, #9d4edd 100%);
-    box-shadow: 0 0 25px rgba(255, 16, 240, 0.8);
+    background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
     transform: scale(1.05);
   }
 
   .upload-form button, .record-form button {
-    background: linear-gradient(135deg, #9d4edd 0%, #ff10f0 100%);
+    background: linear-gradient(135deg, #ff6600 0%, #ff0000 100%);
     color: white;
-    border: 2px solid #ff10f0;
+    border: 2px solid #ff0000;
     padding: 12px 24px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     font-size: 1rem;
-    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+    box-shadow: 0 0 15px rgba(255, 100, 0, 0.5);
     transition: all 0.3s ease;
   }
 
   .upload-form button:hover, .record-form button:hover {
-    background: linear-gradient(135deg, #ff10f0 0%, #9d4edd 100%);
-    box-shadow: 0 0 25px rgba(255, 16, 240, 0.8);
+    background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
     transform: translateY(-2px);
   }
 
@@ -184,77 +184,77 @@
 
   /* Recording Buttons */
   .record-btn {
-    background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+    background: linear-gradient(135deg, #ff6600 0%, #ff9900 100%);
     color: white;
-    border: 2px solid #c77dff;
+    border: 2px solid #ff9900;
     padding: 15px 30px;
     border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1rem;
-    box-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.6);
     transition: all 0.3s ease;
     animation: pulse 2s ease-in-out infinite;
   }
 
   @keyframes pulse {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+      box-shadow: 0 0 20px rgba(255, 100, 0, 0.6);
     }
     50% {
-      box-shadow: 0 0 30px rgba(199, 125, 255, 0.9);
+      box-shadow: 0 0 30px rgba(255, 150, 0, 0.9);
     }
   }
 
   .record-btn:hover {
-    background: linear-gradient(135deg, #c77dff 0%, #ff10f0 100%);
-    box-shadow: 0 0 35px rgba(255, 16, 240, 1);
+    background: linear-gradient(135deg, #ff9900 0%, #ff0000 100%);
+    box-shadow: 0 0 35px rgba(255, 0, 0, 1);
     transform: scale(1.05);
   }
 
   .stop-btn {
-    background: linear-gradient(135deg, #ff10f0 0%, #e0aaff 100%);
+    background: linear-gradient(135deg, #ff0000 0%, #e0aaff 100%);
     color: white;
-    border: 2px solid #ff10f0;
+    border: 2px solid #ff0000;
     padding: 15px 30px;
     border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1rem;
-    box-shadow: 0 0 20px rgba(255, 16, 240, 0.8);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
     transition: all 0.3s ease;
     animation: recording 1s ease-in-out infinite;
   }
 
   @keyframes recording {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(255, 16, 240, 0.8);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
       transform: scale(1);
     }
     50% {
-      box-shadow: 0 0 35px rgba(255, 16, 240, 1);
+      box-shadow: 0 0 35px rgba(255, 0, 0, 1);
       transform: scale(1.02);
     }
   }
 
   .stop-btn:hover {
-    background: linear-gradient(135deg, #e0aaff 0%, #ff10f0 100%);
+    background: linear-gradient(135deg, #e0aaff 0%, #ff0000 100%);
     transform: scale(1.05);
   }
 
   .recorded-section {
-    background: rgba(157, 78, 221, 0.15);
-    border: 2px solid #c77dff;
+    background: rgba(255, 100, 0, 0.15);
+    border: 2px solid #ff9900;
     border-radius: 12px;
     padding: 20px;
     margin-top: 15px;
   }
 
   .recorded-section p {
-    color: #c77dff;
+    color: #ff9900;
     font-weight: bold;
     margin-bottom: 15px;
-    text-shadow: 0 0 10px rgba(199, 125, 255, 0.5);
+    text-shadow: 0 0 10px rgba(255, 150, 0, 0.5);
   }
 
   .recorded-section audio, .recorded-section video {
@@ -264,7 +264,7 @@
   }
 
   .delete-btn {
-    background: linear-gradient(135deg, #ff006e 0%, #ff10f0 100%);
+    background: linear-gradient(135deg, #ff006e 0%, #ff0000 100%);
     color: white;
     border: 2px solid #ff006e;
     padding: 8px 16px;
@@ -277,7 +277,7 @@
   }
 
   .delete-btn:hover {
-    background: linear-gradient(135deg, #ff10f0 0%, #ff006e 100%);
+    background: linear-gradient(135deg, #ff0000 0%, #ff006e 100%);
     box-shadow: 0 0 25px rgba(255, 0, 110, 0.8);
     transform: translateY(-2px);
   }
