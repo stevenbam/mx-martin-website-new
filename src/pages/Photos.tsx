@@ -13,7 +13,7 @@ const Photos: React.FC = () => {
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [newCaption, setNewCaption] = useState<string>('');
 
-  const ADMIN_PASSWORD = 'mxmartin2024';
+  const ADMIN_PASSWORD = '$Aragorn60';
 
   // Fetch photos from database
   useEffect(() => {

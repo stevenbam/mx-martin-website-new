@@ -8,7 +8,7 @@ const Apps: React.FC = () => {
   const [selectedApp, setSelectedApp] = useState<string | null>(null);
 
   // Password for the Apps page (same as admin password)
-  const APPS_PASSWORD = 'mxmartin2024';
+  const APPS_PASSWORD = '$Aragorn60';
 
   useEffect(() => {
     // Check if user is already authenticated (stored in session)

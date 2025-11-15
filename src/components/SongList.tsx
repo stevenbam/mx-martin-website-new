@@ -35,7 +35,7 @@ const SongList: React.FC = () => {
   };
 
   const handleLogin = (): void => {
-    if (password === 'mxmartin2024') {
+    if (password === '$Aragorn60') {
       setIsAdmin(true);
       setShowLogin(false);
       setPassword('');

@@ -21,7 +21,7 @@ const Video: React.FC = () => {
   const videoPreviewRef = React.useRef<HTMLVideoElement>(null);
   const cameraPreviewRef = React.useRef<HTMLVideoElement>(null);
 
-  const ADMIN_PASSWORD = 'mxmartin2024';
+  const ADMIN_PASSWORD = '$Aragorn60';
 
   // Fetch videos from database
   useEffect(() => {

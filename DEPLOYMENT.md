@@ -1,4 +1,4 @@
-# Deployment Guide for Mx Martin Website
+# Deployment Guide for Stuck On Steven Website
 
 ## Overview
 Your website now uses a MySQL database hosted on Hostinger to store all content (songs, lyrics, photos, videos). This guide will help you deploy both the React frontend and Node.js backend to production.
@@ -11,8 +11,8 @@ Your website now uses a MySQL database hosted on Hostinger to store all content 
 - **Database**: Connects to Hostinger MySQL remotely (srv1254.hstgr.io)
 
 ### Production (Hostinger)
-- **Frontend**: Your domain (e.g., https://mxmartin.com)
-- **Backend**: Your domain/api (e.g., https://mxmartin.com/api)
+- **Frontend**: Your domain (e.g., https://stuckonsteven.com)
+- **Backend**: Your domain/api (e.g., https://stuckonsteven.com/api)
 - **Database**: Connects via localhost (127.0.0.1) on server
 
 ## Pre-Deployment Checklist
@@ -21,9 +21,8 @@ Your website now uses a MySQL database hosted on Hostinger to store all content 
 
 **Frontend (.env.production)**
 ```
-REACT_APP_API_URL=https://yourdomain.com/api
+REACT_APP_API_URL=https://stuckonsteven.com/api
 ```
-Replace `yourdomain.com` with your actual domain.
 
 **Backend (server/.env.production)**
 Already configured for Hostinger:
@@ -116,7 +115,7 @@ Or manually add via the admin interface on each page.
 ### 3. Security Considerations
 
 **IMPORTANT**:
-- Change the admin password from 'mxmartin2024' in production
+- Change the admin password in production
 - Add HTTPS (Hostinger provides free SSL certificates)
 - Consider adding user authentication instead of hardcoded passwords
 - Add file size limits for uploads
@@ -173,7 +172,7 @@ npm start
 
 | Variable | Development | Production |
 |----------|------------|------------|
-| Frontend API URL | http://localhost:5000/api | https://yourdomain.com/api |
+| Frontend API URL | http://localhost:5000/api | https://stuckonsteven.com/api |
 | Backend DB Host | srv1254.hstgr.io | 127.0.0.1 |
 | Backend DB Port | 3306 | 3306 |
 | Backend Server Port | 5000 | 5000 (or as configured) |

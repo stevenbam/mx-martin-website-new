@@ -1,9 +1,9 @@
-# 🚀 Hostinger Deployment Steps for mxmartin.com
+# 🚀 Hostinger Deployment Steps for Stuck On Steven
 
 ## 📦 Files You Have Ready:
 
-1. **mxmartin-frontend.tar.gz** (2.6MB) - React app build
-2. **mxmartin-backend.tar.gz** (27KB) - Node.js server
+1. **stuckonsteven-frontend.tar.gz** (2.6MB) - React app build
+2. **stuckonsteven-backend.tar.gz** (27KB) - Node.js server
 3. **.htaccess** - Apache configuration file
 
 All files are in: `C:\Users\steve\source\repos\mxmartin-website-new\`
@@ -14,7 +14,7 @@ All files are in: `C:\Users\steve\source\repos\mxmartin-website-new\`
 
 ### 1.1 Log into Hostinger
 - Go to https://hpanel.hostinger.com
-- Select your mxmartin.com hosting account
+- Select your hosting account
 
 ### 1.2 Open File Manager
 - Navigate to **Files** → **File Manager**
@@ -26,7 +26,7 @@ All files are in: `C:\Users\steve\source\repos\mxmartin-website-new\`
 
 ### 1.4 Upload Frontend
 - Click **Upload** button
-- Upload `mxmartin-frontend.tar.gz`
+- Upload `stuckonsteven-frontend.tar.gz`
 - After upload completes, **right-click** on the tar.gz file
 - Select **Extract** (Hostinger supports tar.gz extraction)
 - Delete the tar.gz file after extraction
@@ -46,12 +46,12 @@ All files are in: `C:\Users\steve\source\repos\mxmartin-website-new\`
 ### 2.1 Create Application Folder
 - In File Manager, go **up one level** (outside public_html)
 - You should be in `/home/your-username/`
-- Create a new folder called `nodejs-app` or `mxmartin-api`
+- Create a new folder called `nodejs-app` or `stuckonsteven-api`
 
 ### 2.2 Upload Backend
 - Open the folder you just created
 - Click **Upload** button
-- Upload `mxmartin-backend.tar.gz`
+- Upload `stuckonsteven-backend.tar.gz`
 - Right-click and **Extract**
 - Delete the tar.gz file after extraction
 - **Note**: Files should extract directly into the folder, not into a subfolder
@@ -93,15 +93,15 @@ npm install
 
 ### 3.1 Test Frontend
 Visit these URLs in your browser:
-- https://mxmartin.com - Should show the home page with Matrix background
-- https://mxmartin.com/listen - Listen page
-- https://mxmartin.com/lyrics - Lyrics page
-- https://mxmartin.com/photos - Photos page
-- https://mxmartin.com/videos - Videos page
+- https://stuckonsteven.com - Should show the home page with Matrix background
+- https://stuckonsteven.com/listen - Listen page
+- https://stuckonsteven.com/lyrics - Lyrics page
+- https://stuckonsteven.com/photos - Photos page
+- https://stuckonsteven.com/videos - Videos page
 
 ### 3.2 Test Backend API
 Visit this URL:
-- https://mxmartin.com/api/songs
+- https://stuckonsteven.com/api/songs
 
 You should see JSON data (probably empty array `[]` at first)
 
@@ -114,9 +114,9 @@ You should see JSON data (probably empty array `[]` at first)
 ## 📝 STEP 4: Add Initial Content
 
 ### Option A: Use Admin Interface
-1. Go to https://mxmartin.com/listen
+1. Go to https://stuckonsteven.com/listen
 2. Click "Admin Login"
-3. Enter password: `mxmartin2024`
+3. Enter password: `$Aragorn60`
 4. Upload your songs, photos, videos, etc.
 
 ### Option B: Run Seed Script
@@ -133,11 +133,11 @@ node seed-data.js
 
 ### 5.1 Enable HTTPS
 - In Hostinger panel, go to **SSL**
-- Install free SSL certificate for mxmartin.com
+- Install free SSL certificate for stuckonsteven.com
 - Enable "Force HTTPS"
 
-### 5.2 Change Admin Password
-- Edit backend code to change from `mxmartin2024`
+### 5.2 Admin Password
+- Current password is set to `$Aragorn60`
 - Or implement proper authentication system
 
 ### 5.3 Check Database Access
@@ -205,8 +205,8 @@ node seed-data.js
 - [ ] Node.js application created in Hostinger
 - [ ] `npm install` completed
 - [ ] Node.js application started
-- [ ] Frontend accessible at https://mxmartin.com
-- [ ] API responding at https://mxmartin.com/api/songs
+- [ ] Frontend accessible at https://stuckonsteven.com
+- [ ] API responding at https://stuckonsteven.com/api/songs
 - [ ] SSL certificate installed and HTTPS enabled
 - [ ] Admin password changed from default
 
