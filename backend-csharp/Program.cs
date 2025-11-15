@@ -3,6 +3,12 @@ using StuckOnSteven.Api.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure Kestrel for larger file uploads
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.Limits.MaxRequestBodySize = 52428800; // 50 MB
+});
+
 // Add services to the container
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
